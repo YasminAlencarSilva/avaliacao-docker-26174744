@@ -40,7 +40,13 @@ do que texto longo copiado. Resposta que contradiz o seu próprio Dockerfile val
 
 7. Escreva os dois comandos `docker run` que fariam o mesmo que o seu `docker-compose.yml`.
 
+docker run -d --name portal -p 8044:80 --restart unless-stopped yasminalencar/viaserra-portal:1.0-27174744
+
+docker run -d --name manutencao -p 7044:80 --restart unless-stopped avaliacao-docker-viaserra-manutencao
+
 8. Qual comando derruba os dois containers de uma vez?
+
+docker compose down
 
 ## Verificador
 
