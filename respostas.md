@@ -1,9 +1,9 @@
 # Respostas · Avaliação Prática de Docker · ViaSerra Transportes (Turma C)
 
-Nome:
-Matrícula:
-Usuário do GitHub:
-Usuário do Docker Hub:
+Nome: Yasmin Alencar da Silva
+Matrícula: 27174744
+Usuário do GitHub: YasminAlencarSilva
+Usuário do Docker Hub: yasminalencar
 
 Responda com as suas palavras e com o que aconteceu na SUA máquina. Resposta curta e certa vale mais
 do que texto longo copiado. Resposta que contradiz o seu próprio Dockerfile vale zero.
@@ -25,13 +25,16 @@ do que texto longo copiado. Resposta que contradiz o seu próprio Dockerfile val
 
 5. Preencha uma linha por defeito encontrado. Defeito inexistente listado aqui desconta pontos.
 
-| # | Instrução | O que estava errado | O que você viu acontecer | Como corrigiu |
-|---|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
+| # | Instrução                  | O que estava errado                                                 | O que você viu acontecer                                  | Como corrigiu                                      |
+| - | -------------------------- | ------------------------------------------------------------------- | --------------------------------------------------------- | -------------------------------------------------- |
+| 1 | `COPY pagina/ .`           | A pasta `pagina/` não existia; o site estava em `site/`.            | O `docker build` falhou com `"/pagina": not found`.       | Alterei para `COPY site/ .`.                       |
+| 2 | `WORKDIR /usr/share/nginx` | O diretório de trabalho não era o diretório de publicação do Nginx. | O container iniciava, mas encerrava com `Exited (0)`.     | Alterei para `WORKDIR /usr/share/nginx/html`.      |
+| 3 | `CMD ["nginx"]`            | O Nginx não estava sendo mantido em primeiro plano no container.    | O container iniciava e depois aparecia como `Exited (0)`. | Alterei para `CMD ["nginx", "-g", "daemon off;"]`. |
+
 
 6. Qual a diferença entre `-p 7042:80` e `-p 80:7042` no `docker run`? Qual dos dois números é a porta do container?
+
+-p 7042:80 publica a porta 80 do container na porta 7042 do host. Já -p 80:7042 publica a porta 7042 do container na porta 80 do host. Portanto, o número da direita é a porta do container.
 
 ## Parte 4 · Primeiro docker-compose
 
