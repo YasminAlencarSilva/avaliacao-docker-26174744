@@ -16,13 +16,12 @@ Tamanho final da imagem: `73.6 MB`.
 2. Em qual pasta do container o Nginx procura os arquivos do site? Mostre o comando que você usou para
    conferir que o `index.html` está lá dentro.
 O Nginx procura os arquivos do site em `/usr/share/nginx/html`.
-Comando utilizado:docker exec avaliacao-docker-viaserra-portal-1 sh -c "grep -n '26174744' /usr/share/nginx/html/index.html"
+Comando utilizado: docker exec avaliacao-docker-viaserra-portal-1 sh -c "grep -n '26174744' /usr/share/nginx/html/index.html"
 
 ## Parte 2 · Docker Hub
 
 3. Nome completo da imagem publicada e link público do repositório no Docker Hub.
 Imagem: yasminalencar/viaserra-portal:1.0-26174744
-
 Link: https://hub.docker.com/r/yasminalencar/viaserra-portal
 4. Se você mudar o HTML, quais comandos precisa rodar para que a versão nova chegue ao Docker Hub?
 docker build -t yasminalencar/viaserra-portal:1.0-26174744 ./portal
@@ -47,7 +46,7 @@ docker push yasminalencar/viaserra-portal:1.0-26174744
 
 7. Escreva os dois comandos `docker run` que fariam o mesmo que o seu `docker-compose.yml`.
 
-docker run -d --name portal -p 8044:80 --restart unless-stopped yasminalencar/viaserra-portal:1.0-27174744
+docker run -d --name portal -p 8044:80 --restart unless-stopped yasminalencar/viaserra-portal:1.0-26174744
 
 docker run -d --name manutencao -p 7044:80 --restart unless-stopped avaliacao-docker-viaserra-manutencao
 
@@ -59,6 +58,4 @@ docker compose down
 
 9. Código de conclusão impresso pelo verificador:
 
-```
-(cole aqui)
-```
+VIASERRA-26174744-41F9FDCE
